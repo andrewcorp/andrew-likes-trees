@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const appDir        = '../src';
 const outputDir     = '../public';
@@ -22,7 +23,7 @@ module.exports = {
       output: {
         path: outputPath,
         filename: "app.js",
-    		publicPath: ''
+    		publicPath: '/'
       },
 
       module: {
@@ -40,7 +41,6 @@ module.exports = {
                 {
                   loader: 'css-loader',
                   options: {
-                    modules: true,
                     importLoaders: 1,
                     localIdentName: '[name]__[local]___[hash:base64:5]'
                   }
@@ -60,7 +60,10 @@ module.exports = {
   	        loader: "file-loader?name=[name].[ext]",
   	      }
         ]
-      }
+      },
+      plugins: [
+        new CopyWebpackPlugin([{ from: 'src/img', to: 'img' }])
+      ]
     }
   }
 };

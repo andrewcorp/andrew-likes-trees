@@ -1,0 +1,89 @@
+body {
+	background: radial-gradient(ellipse at bottom,  rgb(9,76,114) 0%,rgb(1,41,63) 100%);
+}
+
+@function box-shadow($stars) {
+	$shadow: ();
+	@for $i from 1 to $stars {
+		$shadow: append($shadow, (random(2000) + 0px) (random(2000) + 0px) rgba(255,255,255,0.5), comma);
+	}
+	@return unquote($shadow);
+}
+
+$shadow-large: box-shadow(300);
+$shadow-medium: box-shadow(500);
+$shadow-small: box-shadow(800);
+
+.stars.large {
+	height: 6px;
+	width: 6px;
+	background: transparent;
+	box-shadow: $shadow-large;
+	animation: blink-large 7s infinite;
+}
+.stars.medium {
+	height: 4px;
+	width: 4px;
+	background: transparent;
+	box-shadow: $shadow-medium;
+	animation: blink-medium 5s infinite;
+}
+.stars.small {
+	height: 3px;
+	width: 3px;
+	background: transparent;
+	box-shadow: $shadow-small;
+	animation: blink-small 3s infinite;
+}
+
+@keyframes blink-large {
+	0% {
+		box-shadow: $shadow-large;
+	}
+	70% {
+		$colors: 'rgba(255,255,255,0.5)', 'transparent';
+		$stars: $shadow-large;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $shadow-large;
+	}
+}
+@keyframes blink-medium {
+	0% {
+		box-shadow: $shadow-medium;
+	}
+	70% {
+		$colors: 'rgba(255,255,255,0.5)', 'transparent';
+		$stars: $shadow-medium;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $shadow-medium;
+	}
+}
+@keyframes blink-small {
+	0% {
+		box-shadow: $shadow-small;
+	}
+	70% {
+		$colors: 'rgba(255,255,255,0.5)', 'transparent';
+		$stars: $shadow-small;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $shadow-small;
+	}
+}
