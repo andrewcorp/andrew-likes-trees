@@ -1,0 +1,26 @@
+.road{
+  background:$road;
+  bottom:0;
+  height:3vh;
+  left:0;
+  position:absolute;
+  transition:bottom 1s linear;
+  width:100%;
+  &.active{
+    bottom:-160vh;
+  }
+}
+.andrew{
+  bottom:-2vh;
+  filter: brightness(70%);
+  height:70vh;
+  left:50%;
+  position:absolute;
+  transform:translateX(-50%);
+  transition:all 1s linear;
+  width:auto;
+  &.active{
+    bottom:-160vh;
+    height:260vh;
+  }
+}

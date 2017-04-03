@@ -10,33 +10,3 @@ body{
   font-family:$press2p;
   text-align:center;
 }
-.road{
-  background:$road;
-  bottom:0;
-  height:3vh;
-  left:0;
-  position:absolute;
-  width:100%;
-}
-.andrew{
-  bottom:-2vh;
-  filter: brightness(70%);
-  height:70vh;
-  left:50%;
-  position:absolute;
-  transform:translateX(-50%);
-  width:auto;
-}
-#question{
-  line-height:1.5;
-  padding:50px;
-}
-#options{
-  cursor:pointer;
-  margin:0 auto;
-  p{
-    display:inline-block;
-    margin:0 15px;
-    text-transform:uppercase;
-  }
-}
