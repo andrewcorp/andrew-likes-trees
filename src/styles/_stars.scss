@@ -5,7 +5,7 @@ body {
 @function box-shadow($stars) {
 	$shadow: ();
 	@for $i from 1 to $stars {
-		$shadow: append($shadow, (random(2000) + 0px) (random(2000) + 0px) rgba(255,255,255,0.5), comma);
+		$shadow: append($shadow, (random(3000) + 0px) (random(3000) + 0px) rgba(255,255,255,0.5), comma);
 	}
 	@return unquote($shadow);
 }
