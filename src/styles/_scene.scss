@@ -1,7 +1,10 @@
-.road{
-  background:$road;
-  bottom:0;
-  height:3vh;
+.grass{
+  background-position:center top;
+  background-repeat:repeat-x;
+  background-size:auto 10vh;
+  bottom:-2.5vh;
+  filter: brightness($night-brightness);
+  height:10vh;
   left:0;
   position:absolute;
   transition:bottom 1s linear;
@@ -10,10 +13,11 @@
     bottom:-160vh;
   }
 }
+
 .andrew{
-  bottom:-2vh;
-  filter: brightness(70%);
-  height:70vh;
+  bottom:-1vh;
+  filter: brightness($night-brightness);
+  height:85vh;
   left:50%;
   position:absolute;
   transform:translateX(-50%);
